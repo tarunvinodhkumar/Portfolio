@@ -1,6 +1,6 @@
+// export default About
 import classes from './About.module.scss'
 import Footer from '../../components/Footer/Footer'
-
 import { motion } from 'framer-motion'
 import {
   h3Animation,
@@ -20,10 +20,15 @@ import BackToTop from '../../components/BackToTop/BackToTop'
 
 const About = () => {
   const navigate = useNavigate()
+
+  // Slow scroll transition with full hidden until scrolled into view
+  const slowScrollTransition = { duration: 1.5, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 };
+
   return (
     <>
       <motion.main
         variants={opacityPage}
+        initial="hidden"
         animate='show'
         exit='hide'
         className={classes.hero_page_wrapper}
@@ -32,135 +37,102 @@ const About = () => {
           <div className={classes.heropage_content}>
             <div className={classes.heropage_content_wrapper}>
               <Titlepage text={'About'} />
-              <div className={classes.heropage_message}>
-                <motion.p
-                  variants={messageAnimation}
-                  animate='show'
-                  exit='hide'
-                >
-                  Full-stack Developer based in France.
+              <motion.div
+                className={classes.heropage_message}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },    // Initial hidden state
+                  show: { opacity: 1, y: 0 }         // Show with slide-in effect
+                }}
+                initial="hidden"
+                whileInView="show"
+                exit="hide"
+                viewport={{ once: true, amount: 1 }}  // Trigger when fully visible
+                transition={slowScrollTransition}
+              >
+                <motion.p>
+                  Full-stack Developer based in Canada.
                 </motion.p>
-              </div>
-              <div className={classes.buttons}>
-                <Button
-                  onClick={() => navigate('/contact')}
-                  type='button'
-                  // buttonStyle='outline'
-                >
-                  Contact Me
-                </Button>
-
-                <motion.a
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                  exit={{ opacity: 0, scale: 0 }}
-                  className={classes.buttonLink}
-                  href='./images/about/Marcos_Meneghetti_CV_Full_stack_ENG.pdf'
-                  download
-                >
-                  <div>
-                    Download CV
-                    <img
-                      src={
-                        process.env.PUBLIC_URL +
-                        `/images/about/american_flag.png`
-                      }
-                      alt='french flag'
-                      className={classes.flags}
-                    />
-                  </div>
-                </motion.a>
-                <motion.a
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                  exit={{ opacity: 0, scale: 0 }}
-                  className={classes.buttonLink}
-                  href='./images/about/Marcos_Meneghetti_CV_Full_stack_FR.pdf'
-                  download
-                >
-                  <div>
-                    Download CV
-                    <img
-                      src={
-                        process.env.PUBLIC_URL + `/images/about/french_flag.png`
-                      }
-                      alt='french flag'
-                      className={classes.flags}
-                    />
-                  </div>
-                </motion.a>
-              </div>
+              </motion.div>
             </div>
 
-            {/* links  */}
+            {/* Links Section */}
             <motion.div
               variants={h3Animation}
-              animate='show'
-              exit='hide'
+              initial="hidden"
+              whileInView="show"
+              exit="hide"
+              viewport={{ once: true, amount: 1 }}
+              transition={slowScrollTransition}
               className={classes.heropage_links}
             >
-              <Links />
             </motion.div>
           </div>
-          <div className={classes.heropage_txt_container}>
-            <motion.div
-              variants={scaleAnim}
-              animate='show'
-              exit='hide'
-              className={classes.heropage_txt_container_text}
-            >
-              <p>
-                My name is Marcos Meneghetti, I'm a Full-stack developer. I
-                discovered HTML in July 2020 and now it's "my precious". I have
-                a bachelor's degree in advertising, a certificate in Front-End
-                and a diploma in Full-stack development. I have knowledge of
-                design and 3D animation. I speak Portuguese (maternal language),
-                french, english and I have a good knowledge of spanish.
-              </p>
 
+          {/* About Text Content */}
+          <motion.div
+            className={classes.heropage_txt_container}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              show: { opacity: 1, y: 0 }
+            }}
+            initial="hidden"
+            whileInView="show"
+            exit="hide"
+            viewport={{ once: true, amount: 1 }}
+            transition={slowScrollTransition}
+          >
+            <div className={classes.heropage_txt_container_text}>
               <p>
-                I lived in Canada during 2 years (2019-2021) and now I live
-                again in France. I have worked in the industry as 3D animator
-                for 15 years in short and feature films, TV shows and for
-                various animation studios like Blue Spirit Canada, Bullit
-                Studio, TeamTo, Citron Vache and Otto Desenhos Animados.
+                Hi, I'm Tarun Vinodh Kumar, a Full-Stack Developer with a Computer Science background and hands-on expertise in creating user-centric applications. With a strong foundation in React, Node.js, and data visualization, I've built impactful projects like a Depression Detection System and a Movie Recommendation Engine. Experienced in both front-end and back-end development, I thrive on using technologies like Python, SQL, and cloud platforms to deliver scalable solutions. Outside of tech, I'm passionate about gaming and exploring the latest advancements in AI.
               </p>
-
-              <p>
-                My passions are: web development, 3D animation, take pictures,
-                cinema, miniatures, listen to music, hockey and martial arts.
-              </p>
-            </motion.div>
+            </div>
             <motion.div
-              variants={xAnimPos50}
-              animate='show'
-              exit='hide'
+              variants={{
+                hidden: { opacity: 0, x: 50 },
+                show: { opacity: 1, x: 0 }
+              }}
+              initial="hidden"
+              whileInView="show"
+              exit="hide"
+              viewport={{ once: true, amount: 1 }}
+              transition={slowScrollTransition}
               className={classes.heropage_txt_container_photo}
             >
               <img
-                src={process.env.PUBLIC_URL + `/images/about/marcosabout.png`}
+                src={process.env.PUBLIC_URL + `/images/about/processed_image.png`}
                 alt='me'
               />
             </motion.div>
-          </div>
+          </motion.div>
+
+          {/* Work Section with Improved Animation */}
           <motion.div
-            variants={paragraphs}
-            animate='show'
-            exit='hide'
+            variants={{
+              hidden: { opacity: 0, scale: 0.95 }, // Start with reduced scale and invisible
+              show: { opacity: 1, scale: 1 }       // Fade in with a subtle scale-up
+            }}
+            initial="hidden"
+            whileInView="show"
+            exit="hide"
+            viewport={{ once: true, amount: 1 }}    // Trigger when fully in view
+            transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }} // Smooth and slow
             className={classes.heropage_work}
           >
             <div className={classes.heropage_line}></div>
-            <motion.p variants={work} animate='show' exit='hide'>
-              Let's work together on your next project.
+            <motion.p>
+              Excited to bring fresh ideas and energy to your team. Let's build something great together!
             </motion.p>
             <div className={classes.heropage_line}></div>
           </motion.div>
+
+          {/* Contact Links */}
           <motion.div
             variants={h3Animation}
-            animate='show'
-            exit='hide'
+            initial="hidden"
+            whileInView="show"
+            exit="hide"
+            viewport={{ once: true, amount: 1 }}
+            transition={slowScrollTransition}
             className={classes.heropage_links_bottom}
           >
             <Links
@@ -175,10 +147,15 @@ const About = () => {
             </Links>
           </motion.div>
         </section>
+
+        {/* Background Text */}
         <motion.section
           variants={backWords}
-          animate='show'
-          exit='hide'
+          initial="hidden"
+          whileInView="show"
+          exit="hide"
+          viewport={{ once: true, amount: 1 }}
+          transition={slowScrollTransition}
           className={classes.background_text}
         >
           <h2>ABO</h2>
@@ -186,7 +163,6 @@ const About = () => {
         </motion.section>
       </motion.main>
       <BackToTop />
-      <Footer />
     </>
   )
 }
