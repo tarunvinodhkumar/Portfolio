@@ -5,7 +5,7 @@ export const Links = () => {
     <>
       <a
         target="_blank"
-        href="https://www.linkedin.com/in/3dmarcosmeneghetti/"
+        href="https://www.linkedin.com/in/tarun-vinodh-kumar-177ab0193/"
         rel="noopener noreferrer"
       >
         <img
@@ -15,7 +15,7 @@ export const Links = () => {
       </a>
       <a
         target="_blank"
-        href="https://github.com/MarcosMene"
+        href="https://github.com/tarunvinodhkumar"
         rel="noopener noreferrer"
       >
         <img
@@ -25,7 +25,7 @@ export const Links = () => {
       </a>
       <Link
         onClick={() =>
-          (window.location = "mailto:meneghettimarcos@outlook.com")
+          (window.location = "mailto:tarunvinodhkumar@gmail.com")
         }
       >
         <img

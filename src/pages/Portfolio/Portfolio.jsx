@@ -56,7 +56,7 @@ const Portfolio = () => {
           >
             <a
               target="_blank"
-              href="https://www.linkedin.com/in/3dmarcosmeneghetti/"
+              href="https://www.linkedin.com/in/tarun-vinodh-kumar-177ab0193/"
               rel="noopener noreferrer"
             >
               <img
@@ -66,7 +66,7 @@ const Portfolio = () => {
             </a>
             <a
               target="_blank"
-              href="https://github.com/MarcosMene"
+              href="https://github.com/tarunvinodhkumar"
               rel="noopener noreferrer"
             >
               <img
