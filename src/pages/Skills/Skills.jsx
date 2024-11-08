@@ -45,8 +45,6 @@ const Skills = () => {
               exit="hide"
               className={classes.heropage_links}
             >
-              {/*</Link> */}
-              <Links />
             </motion.div>
           </div>
 
@@ -125,7 +123,6 @@ const Skills = () => {
           <h2>lls</h2>
         </motion.section>
       </motion.main>
-      <Footer />
     </>
   )
 }
