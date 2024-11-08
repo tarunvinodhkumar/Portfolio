@@ -133,3 +133,8 @@
     }
   }
 }
+.heropage_message {
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
+}

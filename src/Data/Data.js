@@ -84,12 +84,7 @@ export const Webwork = [
     image: 'api.png',
     alt: 'api logo',
   },
-  // {
-  //   id: 5455,
-  //   text: 'VSCODE',
-  //   image: 'vscode.png',
-  //   alt: 'vscode logo',
-  // },
+
   {
     id: 1096,
     text: 'POSTMAN',
@@ -120,22 +115,40 @@ export const Webdesign = [
   },
   {
     id: 7571,
-    text: 'AFFINITY DESIGNER',
-    image: 'affinity.png',
-    alt: 'affinity logo',
-  },
-  {
-    id: 7731,
     text: 'PHOTOSHOP',
     image: 'photoshop.png',
     alt: 'photoshop logo',
   },
   {
-    id: 1893,
+    id: 7731,
     text: 'AFTER EFFECTS',
     image: 'aftereffects.png',
     alt: 'after effects logo',
   },
+  {
+    id: 1893,
+    text: 'Docker',
+    image: 'docker.png',
+    alt: 'docker logo',
+  },
+  {
+    id: 1894,
+    text: 'Kubernetes',
+    image: 'kuber.png',
+    alt: 'kubernetes logo',
+  },
+  {
+    id: 1895,
+    text: 'Selenium',
+    image: 'selenium.png',
+    alt: 'selenium logo',
+  },
+  {
+    id: 1896,
+    text: 'Jira',
+    image: 'jira.png',
+    alt: 'jira logo',
+  }
 ]
 
 export const Portfolio = [
