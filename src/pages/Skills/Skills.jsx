@@ -20,6 +20,7 @@ const Skills = () => {
         animate="show"
         exit="hide"
         className={classes.hero_page_wrapper}
+        transition={{ duration: 2 }} // Increase the duration here for a slower effect
       >
         <section className={classes.heropage}>
           <div className={classes.heropage_content}>
@@ -30,6 +31,7 @@ const Skills = () => {
                   variants={messageAnimation}
                   animate="show"
                   exit="hide"
+                  transition={{ duration: 1.5 }} // Set a slower transition for the text
                 >
                   This is my go-to set of technologies, empowering me to craft high-quality web applications as a full-stack developer.
                 </motion.p>
@@ -40,6 +42,7 @@ const Skills = () => {
               animate="show"
               exit="hide"
               className={classes.heropage_links}
+              transition={{ duration: 1.5 }} // Slower animation for h3 elements
             >
             </motion.div>
           </div>
@@ -49,9 +52,10 @@ const Skills = () => {
             animate="show"
             exit="hide"
             className={classes.heropage_work}
+            transition={{ duration: 1.8 }} // Slow animation for paragraphs
           >
             <div className={classes.heropage_line}></div>
-            <motion.p variants={work} animate="show" exit="hide">
+            <motion.p variants={work} animate="show" exit="hide" transition={{ duration: 1.8 }}>
               Development
             </motion.p>
             <div className={classes.heropage_line}></div>
@@ -63,9 +67,10 @@ const Skills = () => {
             animate="show"
             exit="hide"
             className={classes.heropage_work}
+            transition={{ duration: 1.8 }} // Slow animation for paragraphs
           >
             <div className={classes.heropage_line}></div>
-            <motion.p variants={work} animate="show" exit="hide">
+            <motion.p variants={work} animate="show" exit="hide" transition={{ duration: 1.8 }}>
               Tools
             </motion.p>
             <div className={classes.heropage_line}></div>
@@ -77,6 +82,7 @@ const Skills = () => {
           animate="show"
           exit="hide"
           className={classes.background_text}
+          transition={{ duration: 2.5 }} // Slow animation for background text
         >
           <h2>ski</h2>
           <h2>lls</h2>
